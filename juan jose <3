@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Perro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .dog {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #si {
+            font-size: 16px;
+        }
+
+        #flores {
+            display: none;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        #flores img {
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dog">🐶 Me perdonas?</div>
+    
+    <div class="buttons">
+        <button id="no" class="btn">NO</button>
+        <button id="si" class="btn">SI</button>
+    </div>
+
+    <div id="flores">
+        <img src="https://www.pngplay.com/wp-content/uploads/6/Flower-Bouquet-PNG-Image.png" alt="Ramo de flores">
+    </div>
+
+    <script>
+        const siButton = document.getElementById('si');
+        const noButton = document.getElementById('no');
+        const flores = document.getElementById('flores');
+
+        noButton.addEventListener('click', () => {
+            // Aumenta el tamaño del botón SI
+            let currentSize = parseInt(window.getComputedStyle(siButton).fontSize);
+            siButton.style.fontSize = (currentSize + 2) + 'px';
+        });
+
+        siButton.addEventListener('click', () => {
+            // Muestra el ramo de flores
+            flores.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
